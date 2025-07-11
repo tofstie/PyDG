@@ -1,0 +1,25 @@
+subsection mesh
+    set left_bound = -1
+    set right_bound = 1
+    set num_grid_elements_per_dim = 16
+    set flux_nodes = GLL
+end
+subsection pde
+    set pde_type = advection
+    set case = sin_wave
+    set final_time = 5
+    set advection_wave_speed = 5.0
+end
+subsection dg
+    set use_weak_form = false
+    set use_split_form = true
+    set flux_reconstruction = cDG
+    set convective_numerical_flux = none
+    set two_point_flux_type = CH
+end
+subsection ode
+    set ode_solver_type = runge_kutta
+    set CFL = 0.3
+    set adaptive_time_step = false
+    set runge_kutta_method = ssprk3
+end
